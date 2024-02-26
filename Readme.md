@@ -1,6 +1,7 @@
 # News Aggregator Web Application
 
-![Project image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/c7157351-9c00-4287-8438-5875716690c8)
+![Project image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/5866ecd5-defb-4fc0-916f-f50b60c88856)
+
 
 ## Overview
 
@@ -99,18 +100,18 @@ Explore and test APIs effortlessly using Postman. Import the provided Postman co
 ## Visual Showcase 📸
 
 News page
-![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/c7157351-9c00-4287-8438-5875716690c8)
+![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/8fd6a718-8d07-4242-bb13-3d1db91e5b88)
 
 Blog submission
-![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/32f016df-7819-4891-992a-daddfca0ce5b)
+![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/05db3ae9-2697-4109-aec1-094938f7b468)
 
 Displaying submitted Blog
-![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/598e6920-b7f5-4b5a-844f-c8a3cadf3ede)
+![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/17ef8fc8-71e2-4c6a-abcd-ef02d1a8c8a2)
 
 Changing Theme
-![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/dbf5f225-d3b3-484b-b173-62b7cc1ba768)
+![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/cb106311-2fcd-4ac3-8171-48d1408f3811)
 
 Changing Language
-![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/f29caa09-92f8-4880-86db-bd6fc78fd995)
+![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/d7f030e4-a680-4c9e-86bc-4d4a16b61a93)
 
-![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/7766ca72-b63a-4223-ad47-89ae5b5cff31)
+![image](https://github.com/Pramod025/News-Aggregator-Webapp/assets/57028365/1c7e496f-cbdf-4aa4-a17e-538b469470f9)
