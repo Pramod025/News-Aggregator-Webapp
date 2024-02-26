@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>News Aggregator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+
+      body {
+        padding: 30px;
+        background-color: white;
+        color: black;
+        font-size: 18px;
+      }
+
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+
+      .Body{
+        padding-left: 40px; /* Add left padding */
+        padding-right: 40px; /* Add right padding */
+        padding-top: 20px;
+            }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 20px 40px;
+        margin: 0 40px;
+      }
+
+      .topbar-buttons {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-size: 15px;
+      }
+
+      .top-h1 {
+        color: white;
+        font-size: 70px;
+        margin: 0; /* Remove default margin */
+        flex-grow: 1; /* Allow the h1 to grow and take available space */
+        margin-left: 180px;
+        text-align: center; /* Center the text */
+      }
+
+      .top-h1 a{
+        color: white;
+        text-decoration: none;
+      }
+
+      .topbar-button {
+        color: white;
+        text-decoration: none;
+        padding: 0px 20px;
+        position: relative;
+      }
+
+      .topbar-dropdown {
+        position: relative;
+        display: inline-block;
+        margin-top: -70px;
+      }
+
+      .topbar-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #04aa6d;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .topbar-dropdown-content a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+      }
+
+      .topbar-dropdown a:hover,
+      .topbar-dropdown-content a:hover {
+        color: blue;
+      }
+
+      .topbar-dropdown:hover .topbar-dropdown-content {
+        display: block;
+      }
+
+      .change-mode-btn {
+        cursor: pointer;
+        padding: 3px;
+        background-color: #04aa6d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: -70px;
+        margin-right: -38px;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0px 40px 0px 40px;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 10px 40px 5px 20px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        font-size: 20px;
+      }
+
+      .active {
+        background-color: #04aa6d;
+        padding: 10px 5px 5px 5px;
+      }
+
+      .signout,
+      .signup,
+      .signin {
+        float: right;
+      }
+
+      .signout a,
+      .signup a,
+      .signin a {
+        display: inline-block;
+        color: #04aa6d;
+        font-size: 18px; /* Adjust as needed */
+        padding: 12px 14px 0 14px;
+        text-decoration: none;
+      }
+
+      .signout a:hover,
+      .signup a:hover,
+      .signin a:hover {
+        font-size: 20px;
+        color: blue;
+      }
+      .Publish {
+        float: right;
+      }
+
+      .Publish a {
+        display: inline-block;
+        color: Red;
+        font-size: 18px; /* Adjust as needed */
+        padding: 12px 150px 0 14px;
+        text-decoration: none;
+      }
+
+      .Publish a:hover {
+        font-size: 20px;
+        color: skyblue;
+      }
+      .display-h3{
+        display: inline-block;
+        font-size: 20px;
+        color: skyblue;
+        float: right; 
+        padding: 12px 60px 0 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topbar">
+     <h1 class="top-h1"><a href="{% url 'home' %}">News</a></h1>
+      <div class="topbar-buttons">
+        <div class="topbar-dropdown">
+          <a href="#" class="topbar-button">Language</a>
+          <div class="topbar-dropdown-content">
+            <a href="{% url 'set_language' lang_code='en' %}">English</a>
+            <a href="{% url 'set_language' lang_code='te'%}">Telugu</a>
+            <a href="{% url 'set_language' lang_code='hi'%}">Hindi</a>
+          </div>
+        </div>
+        <button class="change-mode-btn" onclick="myFunction()">
+          Change Mode
+        </button>
+      </div>
+    </div>
+    <ul>
+      <li><a href="{% url 'home'%}">Home</a></li>
+      <li><a href="{% url 'Parsing' category_name='general' %}">General</a></li>
+      <li><a href="{% url 'Parsing' category_name='entertainment' %}">Entertainment</a></li>
+      <li><a href="{% url 'Parsing' category_name='sports' %}">Sports</a></li>
+      <li><a href="{% url 'Parsing' category_name='nation' %}">Nation</a></li>
+      <li><a href="{% url 'Parsing' category_name='health' %}">Health</a></li>
+      {% if user.is_authenticated %}
+          <li class="signout"><a href="{% url 'signout' %}">Signout</a></li>
+          <li class="Publish"><a href="{% url 'publish' %}">Publish article</a></li>
+      {% else %}
+          <li class="signin"><a href="{% url 'signin' %}">Signin</a></li>
+          <li class="signup"><a href="{% url 'signup' %}">Signup</a></li>
+          <li class="Publish"><a href="{% url 'signup' %}">Publish article</a></li>
+      {% endif %}
+    </ul>
+
+    <div class="Body row row-cols-1 row-cols-md-4 g-4">
+        {% for article in articles %}
+        <div class="col">
+          <div class="card">
+          {% if article.image.url %}
+            <img class="card-img-top" src="{{article.image.url}}" />
+          {% else %}
+            <img class="card-img-top" src="{{article.image}}" />
+          {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">
+              {% if article.url %}
+                <a href="{{ article.url  }}"
+                  >{{ article.title|truncatechars:50 }}</a
+                >
+              {% else %}
+               <a href="{{ article.get_absolute_url }}"
+                  >{{ article.title|truncatechars:50 }}</a
+                >
+              {% endif %}
+              </h5>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex justify-content-between flex-wrap">
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for headline in headlines %}
+         <div class="col">
+          <div class="card">
+            <img class="card-img-top" src="{{headline.image}}" />
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="{{ headline.url }}"
+                  >{{ headline.title|truncatechars:50 }}</a
+                >
+              </h5>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex justify-content-between flex-wrap">
+                <div class="mb-2">
+                  <!-- Copy Button -->
+                  <button
+                    class="btn btn-secondary btn-sm btn-block"
+                    onclick="copyToClipboard('{{ headline.url }}')"
+                  >
+                    Copy
+                  </button>
+                </div>
+
+                <div class="mb-2">
+                  <!-- Report Button -->
+                  <button
+                    class="btn btn-danger btn-sm btn-block"
+                    onclick="report('{{ article.url }}')"
+                  >
+                    Report
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <h1 id="loading">Loading....</h1>
+
+    <script>
+      function copyToClipboard(text) {
+        var input = document.createElement("textarea");
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+        alert("Copied to clipboard: " + text);
+      }
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+       // Store the mode preference in localStorage
+    var isDarkMode = element.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+  }
+
+  // Check for stored mode preference on page load
+  document.addEventListener("DOMContentLoaded", function () {
+    var isDarkMode = localStorage.getItem("darkMode") === "true";
+    var element = document.body;
+    if (isDarkMode) {
+      element.classList.add("dark-mode");
+    } else {
+      element.classList.remove("dark-mode");
+    }
+  });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
