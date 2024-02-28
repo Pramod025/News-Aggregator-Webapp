@@ -53,6 +53,7 @@ The News Aggregator Web App is a dynamic platform designed to keep users informe
 
 - **Backend Brilliance:**
   - Django framework for robust backend functionality.
+  - JSON parsing to display data
   - PostgreSQL as a reliable database.
 
 - **Tools of the Trade:**
