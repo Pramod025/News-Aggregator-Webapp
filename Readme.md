@@ -5,15 +5,14 @@
 
 ## Overview
 
-The News Aggregator Web App is a dynamic platform designed to keep users informed about the latest news, facilitate community interaction, and provide a space for creative expression through blog creation. Crafted with a modern tech stack including HTML, CSS, JavaScript, Django, and PostgreSQL, this project offers an immersive user experience.
+The News Aggregator Web App is a dynamic platform designed to keep users informed about the latest news, facilitate community interaction, and provide a space for creative expression through blog creation. Crafted with a modern tech stack including HTML, CSS, JavaScript, Django, and PostgreSQL, this webapp offers an immersive user experience.
 
 ## Features
 
 ### User Authentication 🚀
 
 - **Seamless Access:**
-  - Effortless user login and logout functionality.
-  - user registration.
+  - Effortless user registration, login and logout functionality.
 
 ### Interactive Dashboard 📊
 
@@ -48,7 +47,7 @@ The News Aggregator Web App is a dynamic platform designed to keep users informe
 ### Technologies Used 🛠️
 
 - **Frontend Magic:**
-  - HTML, CSS, JavaScript, and Bootstrap for a captivating user interface.
+  - HTML, CSS for a captivating user interface.
   - Responsive design for an optimal viewing experience.
 
 - **Backend Brilliance:**
